@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEA - Sistema de Análise de Estoque</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #004f9f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      background-color: #003974;
+      padding: 10px 20px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #004f9f;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .btn-area {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .btn-area a {
+      background-color: #004f9f;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #eaeaea;
+      margin-top: 40px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SEA</h1>
+    <p>Sistema de Análise de Estoque</p>
+  </header>
+
+  <nav>
+    <a href="#">Entrar</a>
+    <a href="#">Cadastrar-se</a>
+  </nav>
+
+  <div class="container">
+    <h1>Bem-vindo ao SEA</h1>
+    <p>Organize e controle seu estoque com facilidade e segurança. Automatize retiradas com QR Code, controle o uso de materiais por funcionário e tenha relatórios claros com poucos cliques.</p>
+
+    <div class="btn-area">
+      <a href="#">Entrar</a>
+      <a href="#">Cadastrar Empresa</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 SEA - Sistema de Análise de Estoque | Desenvolvido para controle eficiente
+  </footer>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Empresa - SEA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #004f9f;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    form label {
+      font-weight: bold;
+    }
+    form input, form select {
+      padding: 8px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .full {
+      grid-column: span 2;
+    }
+    .submit {
+      background-color: #004f9f;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .submit:hover {
+      background-color: #003974;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Empresa</h1>
+    <form action="processa_empresa.php" method="POST">
+      <div class="full">
+        <label>Nome da empresa</label>
+        <input type="text" name="nome_empresa" required>
+      </div>
+      <div>
+        <label>Razão social</label>
+        <input type="text" name="razao_social">
+      </div>
+      <div>
+        <label>Nome fantasia</label>
+        <input type="text" name="nome_fantasia">
+      </div>
+      <div>
+        <label>CNPJ</label>
+        <input type="text" name="cnpj">
+      </div>
+      <div>
+        <label>Ramo de atividade</label>
+        <input type="text" name="ramo">
+      </div>
+      <div class="full">
+        <label>Endereço completo</label>
+        <input type="text" name="endereco">
+      </div>
+      <div>
+        <label>Telefone comercial</label>
+        <input type="text" name="telefone">
+      </div>
+      <div>
+        <label>E-mail da empresa</label>
+        <input type="email" name="email_empresa">
+      </div>
+      <div>
+        <label>WhatsApp (opcional)</label>
+        <input type="text" name="whatsapp">
+      </div>
+      <div>
+        <label>Site (opcional)</label>
+        <input type="text" name="site">
+      </div>
+      <div class="full">
+        <label>Nome do responsável</label>
+        <input type="text" name="responsavel">
+      </div>
+      <div>
+        <label>Telefone do responsável</label>
+        <input type="text" name="tel_responsavel">
+      </div>
+      <div>
+        <label>E-mail do responsável</label>
+        <input type="email" name="email_responsavel">
+      </div>
+      <div class="full">
+        <label>E-mail para login</label>
+        <input type="email" name="email_login" required>
+      </div>
+      <div>
+        <label>Senha</label>
+        <input type="password" name="senha" required>
+      </div>
+      <div>
+        <label>Confirmar senha</label>
+        <input type="password" name="confirma_senha" required>
+      </div>
+      <div>
+        <label>Tipo de estoque</label>
+        <select name="tipo_estoque">
+          <option value="Ferramentas">Ferramentas</option>
+          <option value="EPIs">EPIs</option>
+          <option value="EPCs">EPCs</option>
+        </select>
+      </div>
+      <div>
+        <label>Controle por funcionário?</label>
+        <select name="controle_funcionario">
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+      </div>
+      <div>
+        <label>Nº médio de funcionários</label>
+        <input type="number" name="qtd_funcionarios">
+      </div>
+      <div>
+        <label>Setores/Departamentos</label>
+        <input type="number" name="qtd_setores">
+      </div>
+      <div class="full">
+        <button type="submit" class="submit">Cadastrar Empresa</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
