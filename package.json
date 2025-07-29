@@ -1,24 +1,14 @@
 {
   "name": "sae-api",
   "version": "1.0.0",
-  "description": "API backend para o Sistema de Análise de Estoque (SAE)",
   "main": "app.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node app.js"
   },
-  "keywords": [
-    "estoque",
-    "sae",
-    "api",
-    "nodejs",
-    "express",
-    "mysql"
-  ],
-  "author": "Seu Nome",
-  "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2",
-    "mysql2": "^3.11.2"
+    "express": "^4.18.2",
+    "pg": "^8.11.1",
+    "dotenv": "^16.3.1"
   }
 }
