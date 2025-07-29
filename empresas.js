@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const conexao = require('../conexao');
 
-// Rota GET /empresas
 router.get('/', async (req, res) => {
   try {
     const resultado = await conexao.query('SELECT * FROM empresas');
