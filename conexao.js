@@ -1,20 +1,14 @@
-const express = require('express');
-const app = express();
-const empresas = require('./rotas/empresas');
+const { Client } = require('pg');
+require('dotenv').config();
 
-// Middleware para aceitar JSON
-app.use(express.json());
-
-// Rota de teste
-app.get('/', (req, res) => {
-  res.send('API SAE rodando!');
+const conexao = new Client({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
+  ssl: { rejectUnauthorized: false }
 });
 
-// Rota para empresas
-app.use('/empresas', empresas);
-
-// Porta automática do Railway
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+conexao.connect();
+module.exports = conexao;
