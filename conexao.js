@@ -1,18 +1,20 @@
-const mysql = require('mysql2');
+const express = require('express');
+const app = express();
+const empresas = require('./rotas/empresas');
 
-const conexao = mysql.createConnection({
-  host: 'SEU_IP_DO_CLOUD_SQL',
-  user: 'USUARIO_DO_CLOUD_SQL',
-  password: 'SENHA_DO_CLOUD_SQL',
-  database: 'sae_estoque'
+// Middleware para aceitar JSON
+app.use(express.json());
+
+// Rota de teste
+app.get('/', (req, res) => {
+  res.send('API SAE rodando!');
 });
 
-conexao.connect(err => {
-  if (err) {
-    console.error('Erro ao conectar no banco: ' + err.stack);
-    return;
-  }
-  console.log('Conectado ao MySQL como id ' + conexao.threadId);
-});
+// Rota para empresas
+app.use('/empresas', empresas);
 
-module.exports = conexao;
+// Porta automática do Railway
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
